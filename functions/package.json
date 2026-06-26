@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.65.0",
+    "@napi-rs/canvas": "^1.0.1",
     "axios": "^1.7.7",
     "firebase-admin": "^12.7.0",
     "firebase-functions": "^6.1.0",
-    "openai": "^4.73.0"
+    "openai": "^4.73.0",
+    "sharp": "^0.35.2"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

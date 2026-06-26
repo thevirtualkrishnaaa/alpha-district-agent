@@ -34,7 +34,7 @@ export async function generateCaption(
     `Also propose an image generation prompt consistent with this visual style: ${BRAND.visualStyle}`,
     spec.imageBrief ? `Image starting point: ${spec.imageBrief}` : "",
     `When done, your FINAL message must be ONLY this JSON object (no other text, no markdown fences):`,
-    `{"caption": string, "hashtags": string[10-15 tags, with or without the # prefix], "imagePrompt": string}`,
+    `{"caption": string, "hook": string (a punchy 3-6 word scroll-stopper for the image overlay, no emoji), "hashtags": string[10-15 tags, with or without the # prefix], "imagePrompt": string}`,
   ]
     .filter(Boolean)
     .join("\n");
@@ -68,6 +68,7 @@ export async function generateCaption(
 
   return {
     caption: parsed.caption.trim(),
+    hook: (parsed.hook || parsed.caption.split("\n")[0]).trim(),
     hashtags: [...tags].slice(0, 15),
     imagePrompt: parsed.imagePrompt?.trim() || spec.imageBrief || "",
   };

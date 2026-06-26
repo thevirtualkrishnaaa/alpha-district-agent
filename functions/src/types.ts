@@ -17,6 +17,7 @@ export interface Post {
   id: string;
   pillar: Pillar;
   caption: string;
+  hook?: string;
   hashtags: string[];
   imagePrompt: string;
   imagePath?: string; // path within the Storage bucket
@@ -35,4 +36,5 @@ export interface GeneratedCaption {
   caption: string;
   hashtags: string[];
   imagePrompt: string;
+  hook: string; // short scroll-stopper (≤6 words) for the on-image overlay
 }

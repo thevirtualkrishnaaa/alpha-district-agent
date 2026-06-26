@@ -8,6 +8,7 @@ export interface PillarSpec {
   captionBrief: string;
   imageBrief?: string; // base fragment fed to the image model
   research?: string; // if set, the agent web-searches this before writing
+  hookOverlay?: boolean; // if true, render the hook text onto the image
 }
 
 const STYLE = BRAND.visualStyle;
@@ -42,6 +43,7 @@ export const PILLARS: Record<Pillar, PillarSpec> = {
     imageBrief: `A bold manga / anime-inspired illustration of a disciplined warrior/athlete, high-contrast linework, stoic and intense. ${STYLE} Centered, no text.`,
     research:
       "an authentic Stoic quote (name the philosopher — Marcus Aurelius, Epictetus or Seneca) OR a specific anime training/discipline moment (Baki, Hajime no Ippo, Vinland Saga, Kengan Ashura) to reframe for gym identity",
+    hookOverlay: true,
   },
   london: {
     id: "london",
@@ -61,8 +63,27 @@ export const PILLARS: Record<Pillar, PillarSpec> = {
       "Organic brand post (never a hard ad in Month 1). Freedom vs Constraint — why generic gym wear constrains identity; what Alpha District is building and why it matters to YOU. Mention the brand naturally.",
     imageBrief: `An atmospheric identity / apparel mood shot — an oversized dark gym hoodie aesthetic on a lone figure in shadow, premium and raw (do NOT fabricate a specific real product or logo). ${STYLE} No text.`,
     // No web research — brand posts come from internal context.
+    hookOverlay: true,
   },
 };
+
+// Random cinematic modifiers appended to each image prompt so visuals vary
+// shot to shot instead of looking samey.
+const VARIETY = [
+  "dramatic low-angle wide shot, deep shadows",
+  "tight macro close-up detail, shallow depth of field",
+  "overhead top-down composition",
+  "hard side rim-lighting, high-contrast chiaroscuro",
+  "backlit silhouette against a single light source",
+  "gritty 35mm film grain, muted tones",
+  "wide environmental shot with negative space",
+  "moody fog/haze, volumetric light beams",
+];
+
+export function pickVariety(date = new Date()): string {
+  const i = Math.floor(date.getTime() / 3_600_000) % VARIETY.length;
+  return VARIETY[i];
+}
 
 // Pillars the agent can fully auto-generate (all have AI imagery).
 export const AUTO_PILLARS: Pillar[] = Object.values(PILLARS)
