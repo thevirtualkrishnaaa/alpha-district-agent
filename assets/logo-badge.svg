@@ -1,0 +1,5 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alpha District AD badge">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Anton&amp;display=swap');</style>
+  <rect x="16" y="16" width="480" height="480" rx="92" fill="#4B5A33"/>
+  <text x="256" y="256" text-anchor="middle" dominant-baseline="central" font-family="Anton, 'Arial Black', sans-serif" font-size="248" letter-spacing="-8" fill="#F4F4F1">AD</text>
+</svg>

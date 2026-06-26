@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Generated images are written by Cloud Functions (admin SDK) and served
+    // to Instagram via time-limited signed URLs. No public client access.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

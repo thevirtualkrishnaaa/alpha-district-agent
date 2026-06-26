@@ -1,0 +1,12 @@
+node_modules/
+functions/node_modules/
+functions/lib/
+.env
+.env.*
+!.env.example
+*.log
+.firebase/
+.runtimeconfig.json
+serviceAccount*.json
+scripts/token.txt
+.DS_Store

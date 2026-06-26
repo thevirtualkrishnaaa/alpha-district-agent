@@ -1,0 +1,7 @@
+<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alpha District horizontal lockup">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400&amp;display=swap');</style>
+  <rect x="40" y="60" width="180" height="180" rx="36" fill="#4B5A33"/>
+  <text x="130" y="150" text-anchor="middle" dominant-baseline="central" font-family="Anton, 'Arial Black', sans-serif" font-size="96" letter-spacing="-4" fill="#F4F4F1">AD</text>
+  <text x="260" y="150" font-family="Anton, 'Arial Black', sans-serif" font-size="92" letter-spacing="3" fill="#F4F4F1">ALPHA DISTRICT</text>
+  <text x="264" y="200" font-family="Inter, sans-serif" font-size="24" letter-spacing="9" fill="#98A0A6">FREEDOM VS CONSTRAINT</text>
+</svg>
